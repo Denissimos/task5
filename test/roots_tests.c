@@ -5,14 +5,14 @@ CTEST(quadratic_equation_suite, two_roots_test) {
     //Given
     const float a = 2;
     const float b = 5;
-    const float c = 3;
+    const float c = -3;
 
     //When
     Roots answer;
     answer = Discriminant(a, b, c);
 
     //Then
-    const Roots expected_answer = {-3, 1/2, 49};
+    const Roots expected_answer = {0.5, -3, 49};
 
     ASSERT_DBL_NEAR(expected_answer.D, answer.D);
     ASSERT_DBL_NEAR(expected_answer.x1, answer.x1);
