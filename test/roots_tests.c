@@ -1,5 +1,5 @@
 #include <ctest.h>
-#include <root.h>
+#include <D.h>
 
 CTEST(quadratic_equation_suite, two_roots_test) {
     //Given
@@ -47,7 +47,7 @@ CTEST(quadratic_equation_suite, negative_discriminant_test) {
     answer = Discriminant(a, b, c);
 
     //Then
-    const Roots expected_answer = {.discrimiannt = -40};
+    const Roots expected_answer = {.D = -40};
 
     ASSERT_DBL_NEAR(expected_answer.D, answer.D);
 }

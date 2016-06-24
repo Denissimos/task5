@@ -1,6 +1,6 @@
 INCLUDES = -I src/ -I thirdparty/ -lm
 dirs = obj bin
-all: $(dirs) ./bin/root
+all: $(dirs) ./bin/root ./bin/test
 
 $(dirs):
 	mkdir obj
@@ -8,6 +8,9 @@ $(dirs):
 
 ./bin/root: ./obj/D.o ./obj/main.o
 	gcc ./obj/D.o ./obj/main.o -o ./bin/Discriminant $(INCLUDES)
+
+./bin/test: ./obj/D.o ./obj/main_test.o ./obj/roots_tests.o
+	gcc ./obj/D.o ./obj/main_test.o ./obj/roots_tests.o -o ./bin/unit_test $(INCLUDES)
 
 ./obj/main.o: ./src/main.c
 	gcc -c ./src/main.c -Wall -o ./obj/main.o $(INCLUDES)
