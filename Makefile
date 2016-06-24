@@ -23,3 +23,11 @@ $(dirs):
 
 ./obj/main_test.o: ./test/main.c
 	gcc -c ./test/main.c -Wall -o ./obj/main_test.o $(INCLUDES)
+
+.PHONY: test
+test: 
+	./bin/unit_test
+
+.PHONY: clean
+clean:
+	rm -r -f obj/ bin/
